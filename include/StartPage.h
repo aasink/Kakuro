@@ -10,12 +10,12 @@ public:
     explicit StartPage(QWidget *parent = nullptr);
 
 signals:
-    void startGameClicked();
+    void startGameClicked();        // signal for buttons
     void howToPlayClicked();
     void exitClicked();
 
 private:
     QPushButton *startButton;
-    QPushButton *helpButton;
+    QPushButton *helpButton;        // buttons
     QPushButton *exitButton;
 };

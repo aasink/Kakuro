@@ -42,7 +42,7 @@ GamePage::GamePage(QWidget *parent)
 
 
 
-QMenu* GamePage::getGameMenu() const {
+QMenu* GamePage::getGameMenu() const {          // get game & file menu
     return gameMenu;
 }
 
@@ -52,7 +52,7 @@ QMenu* GamePage::getFileMenu() const {
 
 
 
-void GamePage::startNewGame() {
+void GamePage::startNewGame() {             // game controls
     elapsedSeconds = 0;
     timerLabel->setText("Time: 0s");
     gameTimer->start(1000);

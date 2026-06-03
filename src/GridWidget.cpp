@@ -6,7 +6,7 @@
 GridWidget::GridWidget(QWidget *parent) : QWidget(parent) {
 }
 
-void GridWidget::paintEvent(QPaintEvent *) {
+void GridWidget::paintEvent(QPaintEvent *) {        // draw the grid lines
     QPainter painter(this);
     painter.setPen(Qt::black);
 
@@ -23,6 +23,6 @@ void GridWidget::paintEvent(QPaintEvent *) {
     }
 }
 
-QSize GridWidget::sizeHint() const {
+QSize GridWidget::sizeHint() const {    // default size for the grid widget
     return QSize(400, 400);
 }

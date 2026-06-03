@@ -13,13 +13,13 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
 
 private:
-    QStackedWidget *stack;
+    QStackedWidget *stack;      // stack and pages
     StartPage *startPage;
     GamePage *gamePage;
 
 private slots:
     void showStartPage();
-    void showGamePage();
+    void showGamePage();            // game controls
     void showHowToPlay();
     void showAbout();
 };

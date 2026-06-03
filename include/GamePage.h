@@ -10,21 +10,21 @@ class GamePage : public QWidget {
 
 public:
     explicit GamePage(QWidget *parent = nullptr);
-    QMenu* getGameMenu() const;
+    QMenu* getGameMenu() const;             // get game & file menus
     QMenu* getFileMenu() const;
 
 signals:
     void gameMessage(const QString &msg, const int timeout);
 
 private slots:
-    void startNewGame();
+    void startNewGame();        // game controls
     void resetGame();
     void pauseGame();
     void resumeGame();
     void showHint();
 
 private:
-    GridWidget *grid;
+    GridWidget *grid;       // grid, timer, and menus
     QTimer *gameTimer;
     QLabel *timerLabel;
     int elapsedSeconds;

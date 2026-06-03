@@ -12,11 +12,11 @@ StartPage::StartPage(QWidget *parent)
     layout->addWidget(title);
 
     // Buttons
-    startButton = new QPushButton("Start Game", this);
+    startButton = new QPushButton("New Game", this);       
     helpButton  = new QPushButton("How to Play", this);
     exitButton  = new QPushButton("Exit", this);
 
-    layout->addWidget(startButton);
+    layout->addWidget(startButton);     // add buttons to layout
     layout->addWidget(helpButton);
     layout->addWidget(exitButton);
 

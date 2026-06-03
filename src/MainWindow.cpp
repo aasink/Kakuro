@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     showStartPage();  // Show start page initially
 }
 
-void MainWindow::showStartPage() {
+void MainWindow::showStartPage() {                  // switch to start and game pages
     stack->setCurrentWidget(startPage);
 }
 
@@ -50,7 +50,7 @@ void MainWindow::showGamePage() {
     menuBar()->addMenu(gamePage->getFileMenu());
 }
 
-void MainWindow::showHowToPlay() {
+void MainWindow::showHowToPlay() {                  // show instructions dialog
     QMessageBox::information(this,
         "How to Play Kakuro",
         "Kakuro is a logic puzzle similar to a crossword, but with numbers.\n\n"
@@ -63,7 +63,7 @@ void MainWindow::showHowToPlay() {
         // TODO: fix dialog box & add better instructions with examples
 }
 
-void MainWindow::showAbout() {
+void MainWindow::showAbout() {          // show about dialog
     QMessageBox::about(this,
         "About Kakuro",
         "Kakuro\n\nA puzzle game.\n\n");
