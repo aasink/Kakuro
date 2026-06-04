@@ -5,6 +5,8 @@ using namespace std;
 Cell::Cell()                // default -> initialize blocked cell
     : type(CellType::Blocked), clueAcross(0), clueDown(0), value(0) {}
 
+Board::Board() : m_rows(5), m_cols(5), grid(m_rows, std::vector<Cell>(m_cols)) {}
+
 Board::Board(int rows, int cols)            //  initialize the grid with empty cells
     : m_rows(rows), m_cols(cols), grid(rows, std::vector<Cell>(cols)) {}
 
@@ -32,3 +34,25 @@ void Board::setCellValue(int r, int c, int val) {         // set cell value
 
     cell.value = val;
 }
+
+void Board::setCellType(int r, int c, CellType type) {
+    if (r < 0 || r >= m_rows || c < 0 || c >= m_cols)
+        throw out_of_range("Cell coordinates out of range");
+
+    grid[r][c].type = type;
+}
+
+void Board::setClueAcross(int r, int c, int sum) {
+    if (r < 0 || r >= m_rows || c < 0 || c >= m_cols)
+        throw out_of_range("Cell coordinates out of range");
+
+    grid[r][c].clueAcross = sum;
+}
+
+void Board::setClueDown(int r, int c, int sum) {
+    if (r < 0 || r >= m_rows || c < 0 || c >= m_cols)
+        throw out_of_range("Cell coordinates out of range");
+
+    grid[r][c].clueDown = sum;
+}
+

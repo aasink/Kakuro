@@ -13,7 +13,8 @@ GamePage::GamePage(QWidget *parent)
     auto *layout = new QVBoxLayout(this);
     
     //  grid
-    grid = new GridWidget(this);
+    Controller* controller = new Controller();
+    grid = new GridWidget(controller, this);
     layout->addWidget(grid, 1);
 
     // Menus

@@ -19,6 +19,7 @@ struct Cell {
 
 class Board {
 public:
+    Board();
     Board(int rows, int cols);
 
     int rows() const;       // Get number of rows & cols
@@ -26,6 +27,11 @@ public:
 
     const Cell& getCell(int r, int c) const;            // get and set cell values
     void setCellValue(int r, int c, int val);
+
+
+    void setCellType(int r, int c, CellType type);      // for board gen
+    void setClueAcross(int r, int c, int sum);
+    void setClueDown(int r, int c, int sum);
 
 private:
     int m_rows;                     // Dimensions of the grid

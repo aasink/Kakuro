@@ -16,11 +16,18 @@ qt_add_executable(Kakuro
     src/StartPage.cpp
     src/GamePage.cpp
     src/GridWidget.cpp
+    src/Game/Board.cpp
+    src/Game/Generator.cpp
+    src/Game/Controller.cpp
     include/MainWindow.h
     include/StartPage.h
     include/GamePage.h
     include/GridWidget.h
+    include/Game/Board.h
+    include/Game/Generator.h
+    include/Game/Controller.h   
 )
 
 target_include_directories(Kakuro PRIVATE include)
+target_include_directories(Kakuro PRIVATE include/Game)
 target_link_libraries(Kakuro PRIVATE Qt6::Widgets)
