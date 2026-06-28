@@ -22,10 +22,8 @@ private:
     QAction *gameMenu = nullptr;  // menus
     QAction *fileMenu = nullptr;
 
-private slots:
     void showStartPage();
     void showGamePage();            // game controls
     void showHelpPage();
-    void showHowToPlay();
     void showAbout();
 };

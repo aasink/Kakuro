@@ -24,8 +24,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     stack->addWidget(helpPage); // index 2
 
     auto *helpMenu = menuBar()->addMenu("Help");
-    helpMenu->addAction("How to Play", this, SLOT(showHowToPlay()));
-    helpMenu->addAction("About", this, SLOT(showAbout()));
+    helpMenu->addAction("How to Play", this, &MainWindow::showHelpPage);
+    helpMenu->addAction("About", this, &MainWindow::showAbout);
 
     fileMenu = menuBar()->addMenu(gamePage->getFileMenu());
     fileMenu->setVisible(false);
@@ -54,8 +54,6 @@ void MainWindow::showStartPage() {                  // switch to start and game 
     fileMenu->setVisible(false);
     gameMenu->setVisible(false);
     statusBar()->showMessage("Welcome to Kakuro!", 3000);
-
-    QTimer::singleShot(1000, gamePage, &GamePage::startNewGame);
 }
 
 void MainWindow::showGamePage() {
@@ -64,6 +62,8 @@ void MainWindow::showGamePage() {
     fileMenu->setVisible(true);
     gameMenu->setVisible(true);
     statusBar()->showMessage("Good Luck!", 3000);
+    
+    QTimer::singleShot(1000, gamePage, &GamePage::startNewGame);
 }
 
 void MainWindow::showHelpPage() {
@@ -71,21 +71,6 @@ void MainWindow::showHelpPage() {
 
     fileMenu->setVisible(false);
     gameMenu->setVisible(false);
-}
-
-
-// TODO: delete
-void MainWindow::showHowToPlay() {                  // show instructions dialog
-    QMessageBox::information(this,
-        "How to Play Kakuro",
-        "Kakuro is a logic puzzle similar to a crossword, but with numbers.\n\n"
-        "- Each clue is a sum for a row or column.\n"
-        "- Fill the empty cells with digits 1–9.\n"
-        "- No digit repeats within a sum group.\n"
-        "- The goal is to make all sums match the clues.\n\n"
-        "Tip: Start with small sums and unique combinations!");
-
-        // TODO: fix dialog box & add better instructions with examples
 }
 
 void MainWindow::showAbout() {          // show about dialog
