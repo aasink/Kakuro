@@ -1,0 +1,156 @@
+/* ─────────────────────────────────────────────
+ Kakuro stylesheet
+───────────────────────────────────────────── */
+
+/* ── Global ── */
+QMainWindow, QWidget {
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* ── Menu bar ── */
+QMenuBar {
+    background-color: #16213e;
+    color: #eaeaea;
+    border-bottom: 1px solid #2a2a4a;
+    padding: 2px 4px;
+}
+QMenuBar::item:selected {
+    background-color: #0f3460;
+    border-radius: 6px;
+}
+QMenu {
+    background-color: #16213e;
+    color: #eaeaea;
+    border: 1px solid #2a2a4a;
+    border-radius: 10px;
+    padding: 4px;
+}
+QMenu::item:selected {
+    background-color: #0f3460;
+    border-radius: 6px;
+}
+
+/* ── Buttons ── */
+QPushButton {
+    background-color: #e94560;
+    color: #eaeaea;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+QPushButton:hover    { background-color: #c73652; }
+QPushButton:pressed  { background-color: #16213e; }
+
+QPushButton#secondaryButton {
+    background-color: transparent;
+    color: #eaeaea;
+    border: 1px solid #2a2a4a;
+}
+QPushButton#secondaryButton:hover { background-color: #0f3460; }
+
+/* ── Scroll bars ── */
+QScrollArea { border: none; background-color: transparent; }
+QScrollBar:vertical {
+    background: #16213e;
+    width: 6px;
+    border-radius: 3px;
+}
+QScrollBar::handle:vertical {
+    background: #2a2a4a;
+    border-radius: 3px;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+
+/* ── Status bar ── */
+QStatusBar {
+    background-color: #16213e;
+    color: #a0a0b0;
+    border-top: 1px solid #2a2a4a;
+    font-size: 12px;
+}
+
+/* ── Combo box ── */
+QComboBox {
+    background-color: #16213e;
+    color: #eaeaea;
+    border: 1px solid #2a2a4a;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+QComboBox QAbstractItemView {
+    background-color: #16213e;
+    color: #eaeaea;
+    border: 1px solid #2a2a4a;
+    selection-background-color: #0f3460;
+}
+
+/* ── Labels ── */
+QLabel#pageTitle    { font-size: 28px; font-weight: bold; color: #eaeaea; }
+QLabel#sectionTitle { font-size: 18px; font-weight: bold; color: #eaeaea; }
+QLabel#bodyText     { font-size: 14px; color: #a0a0b0; line-height: 1.6; }
+QLabel#mutedText    { font-size: 12px; color: #606070; }
+
+/* ── TODO: add page-specific styles below ── */
+
+
+/* ── Game page ── */
+QWidget#infoBar {
+    background-color: #16213e;
+    padding: 8px 32px;
+}
+ 
+QFrame#divider {
+    color: #2a2a4a;
+}
+ 
+QWidget#sidebar {
+    min-width: 180px;
+    background-color: #16213e;
+    border-left: 1px solid #2a2a4a;
+    padding: 40px 16px;
+}
+ 
+QWidget#toolRow {
+    padding-bottom: 8px;
+}
+ 
+QWidget#toolRow QPushButton {
+    padding: 8px 4px;
+    font-size: 12px;
+    margin: 4px;
+}
+ 
+QWidget#numpad QPushButton {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+ 
+QPushButton#menuButton {
+    font-size: 18px;
+    padding: 4px 10px;
+    min-width: 36px;
+}
+
+QPushButton#menuButton::menu-indicator {
+    width: 0px;
+    height: 0px;
+    image: none;
+}
+ 
+QLabel#timerLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: #eaeaea;
+}
+ 
