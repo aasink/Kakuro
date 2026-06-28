@@ -161,9 +161,9 @@ QWidget *GamePage::buildNumpad() {
         numpadButtons[i]->setObjectName("numpadButton");
         numpadButtons[i]->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
  
-        // connect(numpadButtons[i], &QPushButton::clicked, this, [this, digit]() {
-        //     grid->inputDigit(digit);    // TODO: implement inputDigit in GridWidget
-        // });
+        connect(numpadButtons[i], &QPushButton::clicked, this, [this, digit]() {
+            grid->inputDigit(digit);  
+        });
  
         layout->addWidget(numpadButtons[i], i / 3, i % 3);
     }
